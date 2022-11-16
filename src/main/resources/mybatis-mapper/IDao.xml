@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+   
+   <mapper namespace="com.napmkmk.test.dao.IDao">
+   <insert id="memberJoin">
+  		 INSERT INTO member (mid, mpw, mname, memail) VALUES (#{param1},#{param2},#{param3},#{param4})
+   </insert>
+   <select id="memberList" resultType="com.napmkmk.test.dto.MemberDto">
+   		SELECT * FROM member <!-- WHERE --><!-- 무조건 다 가져올거면 where 필요 없어 -->
+   </select>
+   <select id="searchIdOk" resultType="com.napmkmk.test.dto.MemberDto">
+  		 SELECT * FROM member WHERE mid=#{param1}
+   </select>
+   </mapper>
